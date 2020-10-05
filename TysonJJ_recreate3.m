@@ -8,13 +8,13 @@ aa=1; %this is a constant but idk what the value is supposed to be
 %how many minutes do you want to graph =Tmax
 Tmax=100
 %initial conditions
-ei1= 0.001 ;
-ei2= 0 ;
-ei3= 0 ;
-ei4= 0.001 ;
-ei5= 0.0001 ;
-ei6= 0 ;
-CTinit= ei1+ei2+ei3+ei4;
+ei1= 0.001 ; %C2 initial
+ei2= 0 ; %CP initial
+ei3= 0 ; %pM initial
+ei4= 0.001 ; %M initial
+ei5= 0.0001 ; %Y initial
+ei6= 0 ; %YP initial
+CTinit= ei1+ei2+ei3+ei4; %CT is constant so CT init should be CT for all
 
 %define rates - given in table 2
 k1 = .015*CTinit/aa; %min^-1
@@ -39,7 +39,7 @@ eq6 =@(C2,CP,pM,M,Y,YP) k6*M - k7*YP   ;
 [time, ex] = ode45(@(a,b)[eq1(b(1),b(2),b(3),b(4),b(5),b(6));eq2(b(1),b(2),b(3),b(4),b(5),b(6));eq3(b(1),b(2),b(3),b(4),b(5),b(6));eq4(b(1),b(2),b(3),b(4),b(5),b(6));eq5(b(1),b(2),b(3),b(4),b(5),b(6));eq6(b(1),b(2),b(3),b(4),b(5),b(6))], [0,Tmax], [ei1,ei2,ei3,ei4,ei5,ei6] );
 %add pM, M, Y and YP together for Ytotal
 Ytot=ex(:,3)+ex(:,4)+ex(:,5)+ex(:,6);
-Ctot=ex(:,1)+ex(:,2)+ex(:,3)+ex(:,4)
+Ctot=ex(:,1)+ex(:,2)+ex(:,3)+ex(:,4);
 %divide by CT
 Ytotvdiv=Ytot./ Ctot;
 
