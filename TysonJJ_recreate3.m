@@ -47,5 +47,5 @@ legend('[Ytot]/[CT]','[M]/[CT]')
 ylabel('Molecular concentration (micromolar? molar?)')
 xlabel('Time (minutes)')
 title('Figure 3A')
-
+%set(gca, 'YScale', 'log')
 %works OK for figure 3A but fibure 3B looks like trash with this code (change k6 to 2 and you'll see what i mean)
