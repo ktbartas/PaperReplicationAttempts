@@ -46,3 +46,4 @@ plot(time,Mdiv,'-', 'color', [0.5 0 1]) % purple/blue for M
 legend('[Ytot]/[CT]','[M]/[CT]')
 ylabel('Molecular concentration (micromolar? molar?)')
 xlabel('Time (minutes)')
+title('Figure 3A')
