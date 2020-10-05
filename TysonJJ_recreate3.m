@@ -6,12 +6,12 @@ clc;close all;
 aa=1; %this is a constant but idk what the value is supposed to be
 
 %define rates - given in table 2
-k1 = .015*.02/aa; %min^-1
-%^^^IF YOU CHANGE THE INITIAL VALUES, change .02 above to whatever number is
+k1 = .015*.002/aa; %min^-1
+%^^^IF YOU CHANGE THE INITIAL VALUES, change .002 above to whatever number is
 %printed repeatedly below after you run 
 k2=0;%min^-1
-k3=200/.02;%min^-1
-%^^^IF YOU CHANGE THE INITIAL VALUES, change .02 above to whatever number is
+k3=200/.002;%min^-1
+%^^^IF YOU CHANGE THE INITIAL VALUES, change .002 above to whatever number is
 %printed repeatedly below after you run 
 k4=180; %adjustable - will change later
 kprime4=0.018;%min^-1
